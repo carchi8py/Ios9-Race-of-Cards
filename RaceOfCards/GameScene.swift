@@ -100,6 +100,42 @@ class GameScene: SKScene {
         setPlayerPlayingPositions()
     }
     
+    func populatePlayerCardsAndMoveToCenter(player: Int, idx: Int, inout playerCards: [Card], inout cardPositions: [CGPoint]){
+        playerCards.append(self.deck[idx])
+        let removedCard = self.deck.removeAtIndex(idx)
+        
+        removedCard.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
+        self.addChild(removedCard)
+        
+        var newX: CGFloat = 0
+        var newY: CGFloat = 0
+        if player == 1 {
+            newX = (self.size.width - (self.cardOffset * 12 + removedCard.size.width)) / 2 + removedCard.size.width/2 + CGFloat(playerCards.count - 1 ) * self.cardOffset
+            newY = removedCard.size.height / 2 + self.sides
+        } else if player == 2 {
+            newX = removedCard.size.width / 2 + self.sides
+            let cardsHeights = self.cardOffset * 12 + removedCard.size.height
+            let bottomEdge = (self.size.height - cardsHeights) / 2
+            let topEdge = self.size.height - bottomEdge
+            newY = topEdge - removedCard.size.height / 2 - CGFloat(playerCards.count - 1) * self.cardOffset
+        } else if player == 3 {
+            newX = (self.size.width - (self.cardOffset * 12 + removedCard.size.width)) / 2 + removedCard.size.width/2 + CGFloat(playerCards.count - 1) * self.cardOffset
+            newY = self.size.height - removedCard.size.height / 2 - self.sides
+        } else if player == 4 {
+            newX = self.size.width - removedCard.size.width / 2 - self.sides
+            let cardsHeights = self.cardOffset * 12 + removedCard.size.height
+            let bottomEdge = (self.size.height - cardsHeights) / 2
+            let topEdge = self.size.height - bottomEdge
+            newY = topEdge - removedCard.size.height / 2 - CGFloat(playerCards.count - 1) * self.cardOffset
+        }
+        cardPositions.append(CGPoint(x: newX, y: newY))
+        
+        let move = SKAction.moveTo(CGPointMake(newX, newY), duration: 1.0)
+        removedCard.runAction(move)
+        
+        
+    }
+    
     func setPlayerPlayingPositions() {
         var newX: CGFloat = 0
         var newY: CGFloat = 0
