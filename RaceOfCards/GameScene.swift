@@ -12,7 +12,7 @@ class GameScene: SKScene {
     
     // Variables
     var suits = ["spade", "heart", "diamond", "club"]
-    var desk = [Card]()
+    var deck = [Card]()
     
     // Center Card
     var centerCard: SKSpriteNode = SKSpriteNode()
@@ -83,6 +83,46 @@ class GameScene: SKScene {
         player2ScoreLabel = childNodeWithName("player2ScoreLabel") as! SKLabelNode
         player3ScoreLabel = childNodeWithName("player3ScoreLabel") as! SKLabelNode
         player4ScoreLabel = childNodeWithName("player4ScoreLabel") as! SKLabelNode
+        
+        // Populate the Deck
+        for i in 0...suits.count-1 {
+            for j in 1...13 {
+                if j == 1 {
+                    let card: Card = Card(rank: 14, suit: suits[i])
+                    deck.append(card)
+                } else {
+                    let card: Card = Card(rank: j, suit: suits[i])
+                    deck.append(card)
+                }
+            }
+        }
+        
+        setPlayerPlayingPositions()
+    }
+    
+    func setPlayerPlayingPositions() {
+        var newX: CGFloat = 0
+        var newY: CGFloat = 0
+        
+        //player 1 
+        newX = centerCard.position.x
+        newY = centerCard.position.y - centerCard.size.height - cardOffset
+        player1PlayingPosition = CGPoint(x: newX, y: newY)
+        
+        //player 2
+        newX = centerCard.position.x - centerCard.size.width - cardOffset
+        newY = centerCard.position.y
+        player2PlayingPosition = CGPoint(x: newX, y: newY)
+        
+        //player 3
+        newX = centerCard.position.x
+        newY = centerCard.position.y + centerCard.size.height + cardOffset
+        player3PlayingPosition = CGPoint(x: newX, y: newY)
+        
+        //player 4
+        newX = centerCard.position.x + centerCard.size.width + cardOffset
+        newY = centerCard.position.y
+        player4PlayingPosition = CGPoint(x: newX, y: newY)
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
