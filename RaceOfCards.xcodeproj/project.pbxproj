@@ -16,6 +16,7 @@
 		27E392311C893B3A00BFD548 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27E3922F1C893B3A00BFD548 /* LaunchScreen.storyboard */; };
 		27E3923C1C893B3A00BFD548 /* RaceOfCardsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E3923B1C893B3A00BFD548 /* RaceOfCardsTests.swift */; };
 		27E392471C893B3A00BFD548 /* RaceOfCardsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E392461C893B3A00BFD548 /* RaceOfCardsUITests.swift */; };
+		27E392551C89434B00BFD548 /* CardsRaceActions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 27E392541C89434B00BFD548 /* CardsRaceActions.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		27E392421C893B3A00BFD548 /* RaceOfCardsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RaceOfCardsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		27E392461C893B3A00BFD548 /* RaceOfCardsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceOfCardsUITests.swift; sourceTree = "<group>"; };
 		27E392481C893B3A00BFD548 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27E392541C89434B00BFD548 /* CardsRaceActions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CardsRaceActions.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 		27E392161C893B3A00BFD548 = {
 			isa = PBXGroup;
 			children = (
+				27E392541C89434B00BFD548 /* CardsRaceActions.sks */,
 				27E392211C893B3A00BFD548 /* RaceOfCards */,
 				27E3923A1C893B3A00BFD548 /* RaceOfCardsTests */,
 				27E392451C893B3A00BFD548 /* RaceOfCardsUITests */,
@@ -240,6 +243,7 @@
 				27E392311C893B3A00BFD548 /* LaunchScreen.storyboard in Resources */,
 				27E3922E1C893B3A00BFD548 /* Assets.xcassets in Resources */,
 				27E3922C1C893B3A00BFD548 /* Main.storyboard in Resources */,
+				27E392551C89434B00BFD548 /* CardsRaceActions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
