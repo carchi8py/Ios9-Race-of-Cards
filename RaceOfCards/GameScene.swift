@@ -70,6 +70,19 @@ class GameScene: SKScene {
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
+        // Center Card
+        centerCard = childNodeWithName("centerCard") as! SKSpriteNode
+        
+        //Label Nodes
+        player1Label = childNodeWithName("player1Label") as! SKLabelNode
+        player2Label = childNodeWithName("player2Label") as! SKLabelNode
+        player3Label = childNodeWithName("player3Label") as! SKLabelNode
+        player4Label = childNodeWithName("player4Label") as! SKLabelNode
+        
+        player1ScoreLabel = childNodeWithName("player1ScoreLabel") as! SKLabelNode
+        player2ScoreLabel = childNodeWithName("player2ScoreLabel") as! SKLabelNode
+        player3ScoreLabel = childNodeWithName("player3ScoreLabel") as! SKLabelNode
+        player4ScoreLabel = childNodeWithName("player4ScoreLabel") as! SKLabelNode
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
